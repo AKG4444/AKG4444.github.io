@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0 auto;
+      }
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+
+      body .wrapper,
+      html .wrapper {
+        position: relative;
+        background-color: #f1f1f1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+
+      div {
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-bottom: 0px;
+        padding-left: 8px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+  <div> </div>
+  <script src=""></script>
+
+  "<payments-widget business-id="kissa" merchant-id="35" sub-merchant-id="1189a69f-c1a9-7678-9370-184b3cbd53b9"
+                    payment-types="Card,Masterpass,GooglePay" branch-id="1111" order-id="" order-amount="1"
+                    is-two-stage="false" pay-disabled="false" token=""
+                    failure-url="ua.kissa.android.mtest://kissa.mobile.payment.failure" success-url="ua.kissa.android.mtest://kissa.mobile.payment.success"
+                    callback-url="http://s-kv-tych1o-x02.officekiev.fozzy.lan:9091/api/v1/payments/callback" wait-token-refresh="false">
+  </payments-widget>
+	
+  </body>
+</html>
