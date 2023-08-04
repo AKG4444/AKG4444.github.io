@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>PaymentsWidget</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+      body {
+        --background-gradient-from: #ff6ad5;
+        --background-gradient-to: #ff3c64;
+        --controls-default: #3936ef;
+      }
+      payments-widget {
+        padding: 1.8rem 1.8rem;
+      }
+    </style>
+  <link rel="stylesheet" href="https://d3pbdyzf7elowv.cloudfront.net/apps/payments-widget/latest/styles.ab6018f90734053c.css"></head>
+  <body>
+    <payments-widget></payments-widget>
+    <script>
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop)
+      })
+      const token = params['token'] || undefined
+      const businessId = params['business-id'] || 'test'
+      const merchantId = params['merchant-id']
+      const successUrl = params['success-url']
+      const failureUrl = params['failure-url']
+      const callbackUrl = params['callback-url']
+      const orchestratorUrl = params['orchestrator-url']
+      const paymentDescription = params['payment-description']
+      const subMerchantId = params['sub-merchant-id']
+      const branchId = params['branch-id']
+      const orderId = params['order-id'] || '569e7427-14ca-43f1-8d4b-ed3b7f1fd197'
+      const orderAmount = params['order-amount'] || 10
+      const isTwoStage = params['is-two-stage'] || true
+      const waitTokenRefresh = params['wait-token-refresh'] || false
+      const payDisabled = params['pay-disabled'] || false
+      const paymentTypes = params['payment-types']
+      const paymentsWidget = document.querySelector('payments-widget')
+      paymentsWidget.setAttribute('business-id', businessId)
+      if (merchantId) {
+        paymentsWidget.setAttribute('merchant-id', merchantId)
+      }
+      if (successUrl) {
+        paymentsWidget.setAttribute('success-url', successUrl)
+      }
+      if (failureUrl) {
+        paymentsWidget.setAttribute('failure-url', failureUrl)
+      }
+      if (callbackUrl) {
+        paymentsWidget.setAttribute('callback-url', callbackUrl)
+      }
+      if (orchestratorUrl) {
+        paymentsWidget.setAttribute('orchestrator-url', orchestratorUrl)
+      }
+      if (paymentDescription) {
+        paymentsWidget.setAttribute('payment-description', paymentDescription)
+      }
+      if (paymentTypes) {
+        paymentsWidget.setAttribute('payment-types', paymentTypes)
+      }
+      if (subMerchantId) {
+        paymentsWidget.setAttribute('sub-merchant-id', subMerchantId)
+      }
+      if (branchId) {
+        paymentsWidget.setAttribute('branch-id', branchId)
+      }
+      paymentsWidget.setAttribute('order-id', orderId)
+      paymentsWidget.setAttribute('order-amount', orderAmount)
+      paymentsWidget.setAttribute('is-two-stage', isTwoStage)
+      paymentsWidget.setAttribute('pay-disabled', payDisabled)
+      paymentsWidget.setAttribute('token', token)
+      paymentsWidget.setAttribute('wait-token-refresh', waitTokenRefresh)
+      /*paymentsWidget.addEventListener('tokenExpired', () => {
+        setTimeout(() => {
+          paymentsWidget.setAttribute('token', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkVBODQ2N0FGMDRFODc3MkZERkExQThDNTI2OERENzQ0MDVGQTY5M0FSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6IjZvUm5yd1RvZHlfZm9hakZKbzNYUkFYNmFUbyJ9.eyJuYmYiOjE2Njc0MDQ0NDYsImV4cCI6MTY2NzQwODA0NiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1wdWJsaWMtcWEuZm9vZHRlY2gudGVhbSIsImNsaWVudF9pZCI6ImVjb20tLW1vYmlsZS1zaWxwbyIsImJ1c2luZXNzX2lkIjoiZWNvbSIsInN1YiI6IjYxY2I1NDc2LWFjN2YtNDc5ZC1hMjMzLWJmNWU5OWRiMmU3OSIsImF1dGhfdGltZSI6MTY2MzEzNjY1MCwiaWRwIjoibG9jYWwiLCJqdGkiOiI5Q0E1NTdCRDgzQTAzMEQzMDM1NDczQjE2REMxREE5RSIsInNpZCI6IjY2Q0RGMUE4MzE0RjNCMUY3NUU2REY3OURBRkQ2NzU3IiwiaWF0IjoxNjY3NDA0NDQ2LCJzY29wZSI6WyJvcGVuaWQiLCJwYXltZW50cy0tcGF5bWVudHMtLXdhbGxldC1zZXJ2aWNlOmNhcmRzLS1yZWFkLW15Il0sImFtciI6WyJwd2QiXX0.l8btPxGoRfj6jZhNlf4wg6AyAXB8qemJQtrCZei9z0GHo1I_JS16RlSPbO6YTZi5dE8n2XUs3CKh9CGZobYt_3G6DNsCBFyZco9oM1xN9ay_Yupw-8AVq1VdjCbu0x2SnFwOcwjySW0vX_vyd0Jz9JXpd7xuq17beM32yMMzKE9sn0dPWuBYKtBiUJct0XKFQjh349DR5u60akK9FpxaW08RJLz4TmL7eZ1vDS0f-wVP4-RMem6jEgl3-4twquqmoWGp-p2ffhQO2clJx3FuwctkIXlAGQLp349KwFdZiJVPsR_43ApN6pmCjdbtyCVjbNv_d1xx6sq0b8T6C9wo1w')
+        }, 1000)
+      })*/
+    </script>
+  <script src="https://d3pbdyzf7elowv.cloudfront.net/apps/payments-widget/latest/runtime.632105d995e581bc.js" type="module"></script><script src="https://d3pbdyzf7elowv.cloudfront.net/apps/payments-widget/latest/polyfills.6055430c10f9d7c7.js" type="module"></script><script src="https://d3pbdyzf7elowv.cloudfront.net/apps/payments-widget/latest/payments-widget.js" type="module"></script>
+
+</body></html>
